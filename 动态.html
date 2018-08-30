@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Potato</title>
+<style>
+    img{
+		position:absolute;
+		top:350px;
+		left:700px;
+		
+		}
+	p{
+		position:absolute;
+		top:700px;
+		left:500px;
+		font-size: 50px;
+	}
+	button{
+		position:absolute;
+		top:850px;
+		left:700px;
+	}
+	
+</style>	
+</head>
+      
+<body>
+	<p id ="a">UBISOFT农业种植中心</p>
+     <canvas width="800" height="800" id="canvas"></canvas>
+     <button onclick="start()">开始</button> 
+     <script>
+     var canvas=document.getElementById("canvas");
+	 var context=canvas.getContext("2d");
+	 var st1 =0;
+     var st2 =1.25
+	 var st3 =0.7;
+	 var st4 =1.8;
+	 var st5 =0;
+     var sg =0;
+function start(){
+	   timer1 = setInterval("draw1()",10);
+	   timer2 = setInterval("draw2()",10);
+	   timer3 = setInterval("draw3()",10);
+	   timer4 = setInterval("draw4()",10);
+	   timer5 = setInterval("draw5()",10);	
+	
+}		 
+	 	 
+	 function draw1(){  	
+	    context.beginPath();
+	    context.fillStyle="black";
+	    //最外部圆
+	    context.arc(400,400,200,0,Math.PI*st1,false);
+	    context.fill();
+	    if(st1<=2){
+		st1 = st1 + 0.01;
+		}else{
+			context.clearRect(0,0,canvas.width,canvas.height);
+			window.clearInterval(timer1);
+		    //timer6 = setInterval("fs()",10);
+		}
+		 
+		context.beginPath();
+	    context.fillStyle="white";
+	    //内部白色圆
+	    context.arc(400,400,180,0,Math.PI*2,false);
+	    context.fill();
+	    context.closePath(); 
+	 }
+ 
+     function draw2(){ 
+		//外部补充
+	    context.beginPath();
+	    context.fillStyle="black";
+		context.arc(400,400,220,Math.PI*1.25,Math.PI*st2,false);
+		if(st2<=2){
+		st2=st2+0.01;
+		}else{
+			context.clearRect(0,0,canvas.width,canvas.height);
+			window.clearInterval(timer2);
+			//timer6 = setInterval("fs()",10);
+		}
+		context.fill();
+	    context.closePath();
+		 
+		context.beginPath();
+	    context.fillStyle="white";
+	    //内部白色圆
+	    context.arc(400,400,180,0,Math.PI*2,false);
+	    context.fill();
+	    context.closePath();  
+		 
+}
+	 function draw3(){
+		context.beginPath();
+		 //偏左
+		context.fillStyle="black";
+	    context.arc(360,425,150,Math.PI*0.75,Math.PI*st3,false);
+		if(st3<=2){
+			st3=st3+0.01;
+			}else{
+				context.clearRect(0,0,canvas.width,canvas.height);
+				window.clearInterval(timer3);
+				timer6 = setInterval("fs()",10);
+			}
+	    context.fill(); 
+		context.closePath();
+		 
+		context.beginPath();
+		context.fillStyle="white"; 
+	   	context.arc(360,425,130,0,Math.PI*2,false);
+	    context.fill();	 
+		context.closePath();
+	 }
+	 
+	 function draw4(){
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(390,475,130,Math.PI*1.8,Math.PI*st4,true);
+		if(st4>=0.7){
+			st4=st4-0.01;
+		}else{
+			//context.clearRect(0,0,canvas.width,canvas.height);
+			window.clearInterval(timer4);
+			//timer6 = setInterval("fs()",10);
+		}
+	 context.fill(); 
+	 context.closePath();
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(390,475,110,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();  
+	 }	
+	 
+	 function draw5(){
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(410,440,86,0,Math.PI*st5,false);
+		 if(st5<=2){
+			 st5=st5+0.01;
+		 }else{
+			 context.clearRect(0,0,canvas.width,canvas.height);
+			//timer6 = setInterval("fs()",10);
+		    window.clearInterval(timer5);
+		 }
+	 context.fill(); 
+	 context.closePath();
+		 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(410,440,65,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 		 
+	 } 
+	if(st1==2){
+		document.white("HelloWorld");
+	}
+		 
+		 function fs(){
+	 context.clearRect(0,0,canvas.width,canvas.height);
+	 context.beginPath();
+	 context.fillStyle="black";
+	 //最外部圆
+	 context.arc(400,400,200,0,Math.PI*2,false);
+	 context.fill();
+	 //外部补充
+	 context.arc(400,400,220,Math.PI*1.25,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //内部白色圆
+	 context.arc(400,400,180,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	
+	 //左偏大圆 
+	 context.arc(360,425,150,Math.PI*0,Math.PI*0.75,true);
+	 context.fill(); 
+	 context.closePath();	
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(360,425,130,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(390,475,130,Math.PI*1.8,Math.PI*0.7,true);
+	 context.fill(); 
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(390,475,110,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 	 		 
+	 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(410,440,86,0,Math.PI*2,false);
+	 context.fill(); 
+	 context.closePath();
+	 	 
+		 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(410,440,65,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();
+	 
+}
+
+		 
+     </script>
+<img src="potato.png" />	
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+    img{
+		position:absolute;
+		top:350px;
+		left:700px;
+		
+		}
+</style>
+
+</head>
+
+<body>
+<canvas width="1920" height="1080" id="canvas"></canvas>
+<script>
+     var canvas = document.getElementById("canvas");
+	 var context= canvas.getContext("2d");
+	 
+	 context.beginPath();
+	 context.fillStyle="black";
+	 //最外部圆
+	 context.arc(400,400,200,0,Math.PI*2,false);
+	 context.fill();
+	 //外部补充
+	 context.arc(400,400,220,Math.PI*1.25,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //内部白色圆
+	 context.arc(400,400,180,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	
+	 //左偏大圆 
+	 context.arc(360,425,150,Math.PI*0,Math.PI*0.75,true);
+	 context.fill(); 
+	 context.closePath();	
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(360,425,130,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(390,475,130,Math.PI*1.8,Math.PI*0.7,true);
+	 context.fill(); 
+	 context.closePath();
+	 
+	 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(390,475,110,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 	 		 
+	 
+	 
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(410,440,86,0,Math.PI*2,false);
+	 context.fill(); 
+	 context.closePath();
+	 	 
+		 
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(410,440,65,0,Math.PI*2,false);
+	 context.fill();
+	 context.closePath(); 	
+	 
+	 
+	 /*	 
+	 context.beginPath();
+     context.fillStyle="black";	 
+	 context.arc(410,440,85,0,Math.PI*2,false);
+	 context.fill(); 
+	 context.closePath();
+
+
+	 context.beginPath();
+	 context.fillStyle="white";
+	 //覆盖白色圆
+	 context.arc(410,440,55,Math.PI*0.2,Math.PI*1.8,false);
+	 context.fill();
+	 context.closePath(); 	*/
+	 
+	 
+	 	 
+</script>
+
+<img src="potato.png" />
+</body>
+</html>
